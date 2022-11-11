@@ -676,6 +676,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -696,7 +697,6 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%) scale(1);
   height: 581px;
   width: 528px;
@@ -704,6 +704,8 @@ p {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+
 
 .modal-close {
   position: absolute;
@@ -714,24 +716,20 @@ p {
   width: 30px;
   height: 30px;
   background-color: #fff;
-  fill: #000000;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.close-icon:hover,
-.close-icon:focus {
-  fill: var(--accent-text-color);
-}
-
-.close-icon {
-  width: 11px;
-  height: 11px;
-  fill: #000000;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--accent-text-color);
+  outline: none;
+}
+
 
 .checkbox-label {
   display: flex;
@@ -791,8 +789,8 @@ p {
 .form-label {
   position: relative;
   margin-bottom: 10px;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
   width: 100%;
   display: block;
 }
@@ -818,6 +816,13 @@ p {
   line-height: 1.16;
 }
 
+  ::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .form-input {
   display: block;
   width: 448px;
@@ -831,7 +836,7 @@ p {
 
 .modal-icon {
   position: absolute;
-  left: 12px;
+  left: 50px;
   top: 30px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
